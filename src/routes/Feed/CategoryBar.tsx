@@ -8,8 +8,7 @@ const CategoryBar: React.FC = () => {
   const currentTag = router.query.tag || "All"
   const data = useTagsQuery()
 
-  // "All" 포함해서 상단에 카테고리들 가로 리스트로
-  // (실제로 'tag' 필드 기반)
+  // "All" + 실제 태그들
   const tagList = ["All", ...Object.keys(data)]
 
   const onClickTag = (tag: string) => {
@@ -41,7 +40,7 @@ export default CategoryBar
 const StyledWrapper = styled.div`
   display: flex;
   gap: 1rem;
-  margin-bottom: 1.5rem; /* 아래 요소와의 간격 */
+  margin-bottom: 1.5rem;
 
   button {
     cursor: pointer;
